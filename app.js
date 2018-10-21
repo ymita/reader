@@ -40,7 +40,33 @@ let data = [
         "spelling": "debacle",
         "meaning": "総崩れ、大失敗",
         "text": "These include the White House’s U.S. Digital Service 18F taskforce, launched in response to the healthcare.gov debacle."
+    },
+    {
+        "id": 8,
+        "spelling": "opulent",
+        "meaning": "贅沢な、豊富な",
+        "text": "She was also known for his opulent lifestyle."
+    },
+    {
+        "id": 9,
+        "spelling": "stout",
+        "meaning": "丈夫な、頑丈な",
+        "text": "Campers prefer stout vessels, sticks and cloth."
+    },
+    {
+        "id": 10,
+        "spelling": "circumvent",
+        "meaning": "回避する",
+        "text": "If the destination server filters content based on the origin of the request, the use of a proxy can circumvent this filter."
+    },
+    {
+        "id": 11,
+        "spelling": "circumvent",
+        "meaning": "回避する",
+        "text": "The concept of a weak reference was developed to circumvent these situations in Perl 5."
     }
+
+    
 ];
 
 // SpeechSynthesisUtterance オブジェクト (例文読み上げに利用する。)
