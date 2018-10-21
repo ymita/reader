@@ -45,7 +45,7 @@ let data = [
         "id": 8,
         "spelling": "opulent",
         "meaning": "贅沢な、豊富な",
-        "text": "She was also known for his opulent lifestyle."
+        "text": "She was also known for her opulent lifestyle."
     },
     {
         "id": 9,
