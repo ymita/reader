@@ -105,7 +105,7 @@ function readText(_word) {
 
                 // 例文を読み上げ始めたら、画面上に日本語の意味を表示する。
                 if (wordInPronounce) {
-                    document.getElementById('meaning').textContent = wordInPronounce.meaning;
+                    document.getElementById('meaning').textContent = wordInPronounce.spelling + ' - ' + wordInPronounce.meaning;
                 }
             }
 
