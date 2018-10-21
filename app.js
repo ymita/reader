@@ -77,7 +77,6 @@ function speech(word) {
     // 読み上げ開始時に呼び出されるイベント
     msg.onstart = (event) => {
         currentIndex = currentIndex + 1;
-        console.log('Utterance has just started.');
         let anchor = document.querySelectorAll(`[data-index-number="${currentIndex}"]`)[0];
         anchor.classList.add('active');
         wordInPronounce = data.find((item) => {
@@ -92,7 +91,6 @@ function speech(word) {
 
     // 読み上げ終了時に呼び出されるイベント
     msg.onend = (event) => {
-        console.log('Utterance has finished being spoken after ' + event.elapsedTime + ' milliseconds.');
         let anchor = document.querySelectorAll(`[data-index-number="${currentIndex}"]`)[0];
         anchor.classList.remove('active');
 
