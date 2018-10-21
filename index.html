@@ -9,12 +9,28 @@
     <meta name="author" content="">
     <title>例文リーダー</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 </head>
 
 <body>
     <div class="container">
         <h1>例文リーダー</h1>
         <button id="startButton">読み上げ開始</button>
+        <button id="pauseButton">一時停止</button>
+        <button id="resumeButton">再開</button>
+        <button id="endButton">終了</button>
+
+        <p>Play-circle icon on a button:
+            <button type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-play-circle"></span> Play
+            </button>
+          </p>
+          <p>Play-circle icon on a styled link button:
+            <a href="#" class="btn btn-info btn-lg">
+              <span class="glyphicon glyphicon-play-circle"></span> Play
+            </a>
+          </p> 
+
         <div id="meaning">　</div>
         <div id="list" class="list-group">
         </div>

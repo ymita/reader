@@ -61,6 +61,21 @@ function registerEvents() {
             speech(data[i]);
         }
     });
+
+    let pauseButton = document.getElementById('pauseButton');
+    pauseButton.addEventListener('click', (evt) => {
+        speechSynthesis.pause();
+    });
+    let resumeButton = document.getElementById('resumeButton');
+    resumeButton.addEventListener('click', (evt) => {
+        speechSynthesis.resume();
+    });
+    let endButton = document.getElementById('endButton');
+    endButton.addEventListener('click', (evt) => {
+        speechSynthesis.cancel();
+    });
+    
+    
 }
 
 // 例文データの長さ (読み上げ終了時に読み上げ位置を初期化するために利用)
@@ -70,10 +85,10 @@ let currentIndex = 0;
 
 // 例文読み上げ、及びリストのスタイリングなど
 function speech(word) {
-    
+
     // 読み上げ中のアイテム (読み上げ開始時に、読み上げ中の例文に含まれる学習単語の日本語を表示するために利用)
     let wordInPronounce;
-    
+
     // 読み上げ開始時に呼び出されるイベント
     msg.onstart = (event) => {
         currentIndex = currentIndex + 1;
@@ -82,7 +97,7 @@ function speech(word) {
         wordInPronounce = data.find((item) => {
             return item.id === currentIndex;
         });
-        
+
         // 例文を読み上げ始めたら、画面上に日本語の意味を表示する。
         if (wordInPronounce) {
             document.getElementById('meaning').textContent = wordInPronounce.meaning;
@@ -105,6 +120,7 @@ function speech(word) {
     msg.text = word.text;
     // 読み上げ！
     speechSynthesis.speak(msg);
+
 }
 
 init();
