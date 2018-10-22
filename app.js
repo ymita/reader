@@ -66,7 +66,7 @@ const data = [
         "text": "The concept of a weak reference was developed to circumvent these situations in Perl 5."
     }
 
-    
+
 ];
 
 // SpeechSynthesisUtterance オブジェクト (例文読み上げに利用する。)
@@ -74,6 +74,16 @@ let msg = null;
 
 // 初期化処理
 function init() {
+    // speechSynthesis の状態を初期化。
+    // 再生途中や一時停止中に画面をリフレッシュすると、speechSynthesis.speak() を呼び出しても再生しない。
+    // これは、前の再生状態・一時停止状態がブラウザに残っているため。このために speechSynthesis.cancel() が必要。
+    speechSynthesis.cancel();
+
+    let pauseButton = document.getElementById('pauseButton');
+    pauseButton.style.display = 'none';
+    let resumeButton = document.getElementById('resumeButton');
+    resumeButton.style.display = 'none';
+
     createList();
     createMessage();
     registerEvents();
@@ -158,6 +168,14 @@ function readText(_word) {
     };
 }
 let start = (evt) => {
+
+    changeButtonVisibility('startButton', 'none');
+    // let startButton = document.getElementById('startButton');
+    // startButton.style.display = 'none';
+    changeButtonVisibility('pauseButton', '');
+    // let pauseButton = document.getElementById('pauseButton');
+    // pauseButton.style.display = '';
+
     // 読み上げ処理を保存する配列
     var promises = [];
     // 配列に読み上げ処理を追加していく
@@ -168,6 +186,29 @@ let start = (evt) => {
     promises.reduce(function (prev, curr, index, array) {
         return prev.then(curr);
     }, Promise.resolve());
+
+}
+const pause = (evt) => {
+    changeButtonVisibility('pauseButton', 'none');
+    // let pauseButton = document.getElementById('pauseButton');
+    // pauseButton.style.display = 'none';
+    changeButtonVisibility('resumeButton', '');
+    // let resumeButton = document.getElementById('resumeButton');
+    // resumeButton.style.display = '';
+
+    speechSynthesis.pause();
+}
+
+const resume = (evt) => {
+    changeButtonVisibility('pauseButton', '');
+    // let pauseButton = document.getElementById('pauseButton');
+    // pauseButton.style.display = '';
+
+    changeButtonVisibility('resumeButton', 'none');
+    // let resumeButton = document.getElementById('resumeButton');
+    // resumeButton.style.display = 'none';
+
+    speechSynthesis.resume();
 }
 
 // ボタンクリックなどイベント登録用の関数
@@ -176,20 +217,21 @@ function registerEvents() {
     startButton.addEventListener('click', start);
 
     let pauseButton = document.getElementById('pauseButton');
-    pauseButton.addEventListener('click', (evt) => {
-        speechSynthesis.pause();
-    });
+    pauseButton.addEventListener('click', pause);
+
     let resumeButton = document.getElementById('resumeButton');
-    resumeButton.addEventListener('click', (evt) => {
-        speechSynthesis.resume();
-    });
-    let endButton = document.getElementById('endButton');
-    endButton.addEventListener('click', (evt) => {
-        speechSynthesis.cancel();
-    });
+    resumeButton.addEventListener('click', resume);
+    // let endButton = document.getElementById('endButton');
+    // endButton.addEventListener('click', (evt) => {
+    //     speechSynthesis.cancel();
+    // });
 
 
 }
 
+function changeButtonVisibility(buttonId, visibleState) {
+    let button = document.getElementById(buttonId);
+    button.style.display = visibleState;
+}
 
 init();

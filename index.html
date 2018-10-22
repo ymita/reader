@@ -18,29 +18,33 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css" integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I"
         crossorigin="anonymous">
 
-        <style>
+    <style>
         .attribution {
             margin-top: 50px;
             margin-bottom: 10px;
+        }
+
+        .button-width{
+            width: 100px;
         }
         </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Reader -  read sentence out loud for you!</h1>
-        <button id="startButton" type="button" class="btn btn-default btn-sm">
+        <h1>Reader - read sentence out loud for you!</h1>
+        <button id="startButton" type="button" class="btn btn-default btn-sm button-width">
             <i class="far fa-play-circle"></i> 再生
         </button>
-        <button id="pauseButton" type="button" class="btn btn-default btn-sm">
-            <i class="far fa-pause-circle"></i> 一時停止
-        </button>
-        <button id="resumeButton" type="button" class="btn btn-default btn-sm">
+        <button id="resumeButton" type="button" class="btn btn-default btn-sm button-width">
             <i class="far fa-play-circle"></i> 再開
         </button>
-        <button id="endButton" type="button" class="btn btn-default btn-sm">
-            <i class="far fa-stop-circle"></i> 終了
+        <button id="pauseButton" type="button" class="btn btn-default btn-sm button-width">
+            <i class="far fa-pause-circle"></i> 一時停止
         </button>
+        <!-- <button id="endButton" type="button" class="btn btn-default btn-sm">
+            <i class="far fa-stop-circle"></i> 終了
+        </button> -->
 
         <div id="meaning">　</div>
         <div id="list" class="list-group">
