@@ -64,9 +64,21 @@ const data = [
         "spelling": "circumvent",
         "meaning": "回避する",
         "text": "The concept of a weak reference was developed to circumvent these situations in Perl 5."
+    },
+    {
+        "id": 12,
+        "spelling": "boulder",
+        "meaning": "大きな石",
+        "text": "In geology, a boulder is a rock fragment with size greater than 25.6 centimetres (10.1 in) in diameter."
+    },
+    {
+        "id": 13,
+        "spelling": "scour",
+        "meaning": "(不要なものを)取り除く、こすって洗う",
+        "text": "We scoured the web for some of this week's most interesting open source-related news stories so you don't have to."
     }
 
-
+    
 ];
 
 // SpeechSynthesisUtterance オブジェクト (例文読み上げに利用する。)
