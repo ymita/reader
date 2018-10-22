@@ -171,11 +171,7 @@ function readText(_word) {
 let start = (evt) => {
 
     changeButtonVisibility('startButton', 'none');
-    // let startButton = document.getElementById('startButton');
-    // startButton.style.display = 'none';
     changeButtonVisibility('pauseButton', '');
-    // let pauseButton = document.getElementById('pauseButton');
-    // pauseButton.style.display = '';
 
     // 読み上げ処理を保存する配列
     var promises = [];
@@ -191,24 +187,14 @@ let start = (evt) => {
 }
 const pause = (evt) => {
     changeButtonVisibility('pauseButton', 'none');
-    // let pauseButton = document.getElementById('pauseButton');
-    // pauseButton.style.display = 'none';
     changeButtonVisibility('resumeButton', '');
-    // let resumeButton = document.getElementById('resumeButton');
-    // resumeButton.style.display = '';
 
     speechSynthesis.pause();
 }
 
 const resume = (evt) => {
     changeButtonVisibility('pauseButton', '');
-    // let pauseButton = document.getElementById('pauseButton');
-    // pauseButton.style.display = '';
-
     changeButtonVisibility('resumeButton', 'none');
-    // let resumeButton = document.getElementById('resumeButton');
-    // resumeButton.style.display = 'none';
-
     speechSynthesis.resume();
 }
 
