@@ -79,10 +79,8 @@ function init() {
     // これは、前の再生状態・一時停止状態がブラウザに残っているため。このために speechSynthesis.cancel() が必要。
     speechSynthesis.cancel();
 
-    let pauseButton = document.getElementById('pauseButton');
-    pauseButton.style.display = 'none';
-    let resumeButton = document.getElementById('resumeButton');
-    resumeButton.style.display = 'none';
+    changeButtonVisibility('pauseButton', 'none');
+    changeButtonVisibility('resumeButton', 'none');
 
     createList();
     createMessage();
@@ -157,6 +155,9 @@ function readText(_word) {
                 if (dataCount === currentIndex) {
                     // 読み上げを終了すると、再度読み上げられるようにインデックスを初期値に設定
                     currentIndex = 0;
+                    changeButtonVisibility('startButton', '');
+                    changeButtonVisibility('pauseButton', 'none');
+                    speechSynthesis.cancel();
                 }
                 // 読み上げが終わったら、プロミスを解決
                 resolve(_word);
