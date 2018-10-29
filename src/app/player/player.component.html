@@ -1,6 +1,6 @@
 <div class="player">
   <div class="player-meaning">
-      {{ meaning }}
+      {{ spelling }} <ng-container *ngIf="spelling !== ''">{{ separator }}</ng-container> {{ meaning }}
   </div>
   <app-playlist class="player-playlist" [sentences]="sentences" [idInPlay]="id">
   </app-playlist>

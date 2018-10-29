@@ -11,6 +11,8 @@ export class PlayerComponent implements OnInit {
   sentences;
   id;
   meaning: string = '';
+  spelling: string = '';
+  separator: string = ' : ';
   
   constructor(
     private sentenceService: SentenceService,
@@ -25,6 +27,7 @@ export class PlayerComponent implements OnInit {
       // console.log(_id);
       this.id = _word.id;
       this.meaning = _word.meaning;
+      this.spelling = _word.spelling;
       this.changeDetectorRef.detectChanges();
     });
   }
