@@ -118,10 +118,11 @@ export class SentenceService {
     this.message.text = word.text;
 
     this.message.onend = (e) => {
-      this.idInPlay++;
+      
       const isStillPlayig = this.wordList.find(word => word.id > this.idInPlay);
       
       if(isStillPlayig){
+        this.idInPlay++;
         this.play();
       }
     };

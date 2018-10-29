@@ -9,7 +9,7 @@ import { SentenceService } from '../services/sentence.service';
 })
 export class PlayerComponent implements OnInit {
   sentences;
-  id = 0;
+  id;
   meaning: string = '';
   
   constructor(
