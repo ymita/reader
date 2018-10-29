@@ -1,0 +1,8 @@
+<div class="playlist list-group">
+  <a href="javascript:void(0)"
+    *ngFor="let sentence of sentences"
+    class="list-group-item list-group-item-action"
+    [class.active]="sentence.id == idInPlay">
+    {{ sentence.text }}
+  </a>
+</div>

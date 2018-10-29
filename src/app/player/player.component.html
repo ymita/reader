@@ -1,0 +1,9 @@
+<div class="player">
+  <div class="player-meaning">
+      {{ meaning }}
+  </div>
+  <app-playlist class="player-playlist" [sentences]="sentences" [idInPlay]="id">
+  </app-playlist>
+  <app-controller class="player-controller" (play)="play()" (resume)="resume()" (pause)="pause()">
+  </app-controller>
+</div>

@@ -1,0 +1,8 @@
+.meaning {
+    height: 5vh;
+}
+.playlist {
+    margin-top: 1vh;
+    height: 85vh;
+    overflow: scroll;
+}
