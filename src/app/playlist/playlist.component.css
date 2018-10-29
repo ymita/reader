@@ -3,6 +3,6 @@
 }
 .playlist {
     margin-top: 1vh;
-    height: 85vh;
+    height: 75vh;
     overflow: scroll;
 }
