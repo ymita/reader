@@ -7,9 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ControllerComponent implements OnInit {
 
-  @Output() play:EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
-  @Output() resume:EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
-  @Output() pause:EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
+  @Output() play: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
+  @Output() resume: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
+  @Output() pause: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
 
   constructor() { }
 
