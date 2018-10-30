@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    justify-content: center;
 }
 .btn {
     margin-right: 3px;
