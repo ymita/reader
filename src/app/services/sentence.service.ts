@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Word } from './word';
+import { Http } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -91,7 +92,7 @@ export class SentenceService {
 
   ];
 
-  constructor() {
+  constructor(private http: Http) {
     this.initMessage();
    }
 
@@ -101,6 +102,10 @@ export class SentenceService {
   }
 
   getData() {
+    this.http.get('https://localhost:5001/api/words').subscribe(res=>{
+      console.log(res);
+    });
+
     return this.wordList;
   }
 
