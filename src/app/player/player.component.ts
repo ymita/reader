@@ -51,6 +51,6 @@ export class PlayerComponent implements OnInit {
   }
 
   addWord() {
-    alert();
+    this.sentenceService.addWord();
   }
 }
