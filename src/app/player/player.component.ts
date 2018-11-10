@@ -19,8 +19,23 @@ export class PlayerComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef
   ) { }
 
-  ngOnInit() {
-    this.sentences = this.sentenceService.getData();
+  async ngOnInit() {
+    // const sub = this.sentenceService.getDataSubscription();
+    // sub.subscribe(res => {
+    //   debugger;
+    //   console.log(JSON.parse(res.text()));
+    //   this.sentences = JSON.parse(res.text());
+    // });
+    // this.sentenceService.initData().subscribe(res => {
+    //   console.log(res);
+    //   this.sentences = JSON.parse(res.text());
+    // })
+    const sub = this.sentenceService.getCurrentData();
+    sub.subscribe((_words: Word[]) => {
+      this.sentences = _words;
+    });
+
+    this.sentenceService.getData();
 
     let subscription = this.sentenceService.getCurrentSentence();
     subscription.subscribe((_word: Word) => {
