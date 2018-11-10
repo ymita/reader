@@ -29,7 +29,6 @@ export class PlayerComponent implements OnInit {
 
     let subscription = this.sentenceService.getCurrentSentence();
     subscription.subscribe((_word: Word) => {
-      // console.log(_id);
       this.id = _word.id;
       this.meaning = _word.meaning;
       this.spelling = _word.spelling;
