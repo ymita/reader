@@ -20,18 +20,20 @@ export class SentenceService {
     this.message.lang = 'en-US';
   }
 
-  getData() {
-    this.http.get('https://localhost:5001/api/words').subscribe(res => {
-      this.wordList = JSON.parse(res.text());
-      this.words.next(this.wordList);
-    });
-  }
-
   words: Subject<Word[]> = new Subject<Word[]>();
   wordsState = this.words.asObservable();
   getCurrentData(): Observable<Word[]> {
     return this.wordsState;
   }
+  
+  getData() {
+    this.http.get('https://localhost:5001/api/words').subscribe(res => {
+    //this.http.get('https://ym.azurewebsites.net/api/words').subscribe(res => {
+      this.wordList = JSON.parse(res.text());
+      this.words.next(this.wordList);
+    });
+  }
+
 
   wordSubject :Subject<Word> = new Subject<Word>();
   idState = this.wordSubject.asObservable();
