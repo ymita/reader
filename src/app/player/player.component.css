@@ -1,3 +1,6 @@
+.menu {
+    float: right;
+}
 .player-player {
     display: flex;
     flex-direction: column;

@@ -1,6 +1,20 @@
 <div class="player">
+  <input type="button" value="add" (click)="addWord()">
+  <button mat-icon-button class="menu" [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>edit</mat-icon>
+      <span>編集</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>playlist_add</mat-icon>
+      <span>追加</span>
+    </button>
+  </mat-menu>
   <div class="player-meaning">
-      {{ spelling }} <ng-container *ngIf="spelling !== ''">{{ separator }}</ng-container> {{ meaning }}
+    {{ spelling }} <ng-container *ngIf="spelling !== ''">{{ separator }}</ng-container> {{ meaning }}
   </div>
   <app-playlist class="player-playlist" [sentences]="sentences" [idInPlay]="id">
   </app-playlist>

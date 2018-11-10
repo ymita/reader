@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatMenuModule, MatButtonModule, MatIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { PlaylistComponent } from './playlist/playlist.component';
@@ -16,7 +19,12 @@ import { PlayerComponent } from './player/player.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

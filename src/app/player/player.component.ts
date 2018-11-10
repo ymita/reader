@@ -49,4 +49,8 @@ export class PlayerComponent implements OnInit {
   pause() {
     this.sentenceService.pause();
   }
+
+  addWord() {
+    alert();
+  }
 }
