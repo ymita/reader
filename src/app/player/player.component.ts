@@ -53,10 +53,6 @@ export class PlayerComponent implements OnInit {
     this.sentenceService.pause();
   }
 
-  addWord() {
-    // this.sentenceService.addWord();
-  }
-
   edit() {
     alert('edit');
   }
@@ -71,7 +67,6 @@ export class PlayerComponent implements OnInit {
     );
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
-      debugger;
       this.sentenceService.addWord(result);
     });
   }

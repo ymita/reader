@@ -1,8 +1,8 @@
+<button mat-icon-button class="menu" [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
 <div class="player">
-  <input type="button" value="add" (click)="addWord()">
-  <button mat-icon-button class="menu" [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
+  
   <mat-menu #menu="matMenu">
     <!-- <button mat-menu-item (click)="edit()">
       <mat-icon>edit</mat-icon>
@@ -16,7 +16,7 @@
   <div class="player-meaning">
     {{ spelling }} <ng-container *ngIf="spelling !== ''">{{ separator }}</ng-container> {{ meaning }}
   </div>
-  <app-playlist class="player-playlist" [sentences]="sentences" [idInPlay]="id">
+  <app-playlist [sentences]="sentences" [idInPlay]="id" class="player-playlist">
   </app-playlist>
   <app-controller class="player-controller" (play)="play()" (resume)="resume()" (pause)="pause()">
   </app-controller>

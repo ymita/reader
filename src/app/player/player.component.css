@@ -1,12 +1,11 @@
 .menu {
     float: right;
 }
-.player-player {
-    display: flex;
-    flex-direction: column;
-}
 .player-meaning {
     height: 25px;
+}
+.player-playlist {
+    float: left;
 }
 .player-controller {
     text-align: center;
