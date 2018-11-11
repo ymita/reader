@@ -1,6 +1,8 @@
+import { DialogComponent } from './../dialog/dialog.component';
 import { Word } from './../services/word';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { SentenceService } from '../services/sentence.service';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-player',
@@ -16,7 +18,8 @@ export class PlayerComponent implements OnInit {
   
   constructor(
     private sentenceService: SentenceService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -52,5 +55,18 @@ export class PlayerComponent implements OnInit {
 
   addWord() {
     this.sentenceService.addWord();
+  }
+
+  edit() {
+    this.dialog.open(DialogComponent,
+      {
+        data: {
+          animal: 'panda'
+        },
+        // width: '250px'
+      });
+  }
+  add() {
+    alert('add');
   }
 }
