@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-
+  @Output() addClicked: EventEmitter<any> = new EventEmitter();
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
@@ -16,5 +16,6 @@ export class DialogComponent implements OnInit {
   }
   onNoClick() {
     alert('onNoClick');
+    this.addClicked.emit(this.data);
   }
 }

@@ -15,7 +15,7 @@ export class PlayerComponent implements OnInit {
   meaning: string = '';
   spelling: string = '';
   separator: string = ' : ';
-  
+
   constructor(
     private sentenceService: SentenceService,
     private changeDetectorRef: ChangeDetectorRef,
@@ -23,7 +23,7 @@ export class PlayerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
     // sentenceService.getData() 呼び出し後にデータを受け取る
     const sub = this.sentenceService.getCurrentData();
     sub.subscribe((_words: Word[]) => {
@@ -54,19 +54,25 @@ export class PlayerComponent implements OnInit {
   }
 
   addWord() {
-    this.sentenceService.addWord();
+    // this.sentenceService.addWord();
   }
 
   edit() {
-    this.dialog.open(DialogComponent,
-      {
-        data: {
-          animal: 'panda'
-        },
-        // width: '250px'
-      });
+    alert('edit');
   }
   add() {
-    alert('add');
+    const dialogRef = this.dialog.open(DialogComponent,
+      {
+        data: {
+          // data can be selected word item when in edit mode.
+        },
+        width: '450px'
+      }
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      debugger;
+      this.sentenceService.addWord(result);
+    });
   }
 }

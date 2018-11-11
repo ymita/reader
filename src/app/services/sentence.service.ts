@@ -69,13 +69,13 @@ export class SentenceService {
     speechSynthesis.resume();
   }
 
-  addWord() {
+  addWord(word: Word) {
     debugger;
     let value = {
-      id: 7,
-      spelling: 'debacle',
-      meaning: '総崩れ、大失敗',
-      text: 'These include the White House’s U.S. Digital Service 18F taskforce, launched in response to the healthcare.gov debacle.'
+      // id: 7,
+      spelling: word.spelling,
+      meaning: word.meaning,
+      text: word.text
     };
     this.http.post(
       'https://localhost:5001/api/words',
